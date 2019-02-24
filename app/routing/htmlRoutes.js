@@ -1,0 +1,22 @@
+// =======================================================
+// Dependencies
+// =======================================================
+
+const path = require("path");
+
+// =======================================================
+// Routing
+// =======================================================
+
+module.exports = function(app) {
+    
+    // GET Route to Survey
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
+
+    // GET Route for no matching route to Home
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+};
