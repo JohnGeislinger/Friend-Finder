@@ -1,7 +1,7 @@
 {
   "name": "Friend-Finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Finder your best friend",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/JohnGeislinger/Friend-Finder.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "John Geislinger",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JohnGeislinger/Friend-Finder/issues"
