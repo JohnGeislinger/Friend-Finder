@@ -10,13 +10,14 @@ const path = require("path");
 
 module.exports = function(app) {
     
-    // GET Route to Survey
+    // HTML GET Request
     app.get("/survey", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/survey.html"));
+        res.sendFile(path.join(__dirname + "/../public/survey.html"));
     });
 
-    // GET Route for no matching route to Home
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
+    // If no matching route is found, default to home
+    app.use("*", function(req, res) {
+        res.sendFile(path.join(__dirname + "/../public/home.html"));
     });
+
 };
