@@ -11,16 +11,16 @@ const friends = require("../data/friends");
 module.exports = function(app) {
     
     // API GET Request
-    app.get("api/friends", function(req, res) {
-        res.json(friendArray);
+    app.get("/api/friends", function(req, res) {
+        res.json(friends);
     });
 
     // API POST Request
-    app.post("api/friends", function(req, res) {
-        let bestFriend = {
+    app.post("/api/friends", function(req, res) {
+        let bestMatch = {
             name: "",
             photo: "",
-            friendDifference: 100
+            friendDifference: Infinity
         }
 
         let userData = req.body;
@@ -28,25 +28,27 @@ module.exports = function(app) {
 
         let totalDifference;
 
-        for (let i = 0; i < friendArray.length; i++) {
-            let currentFriend = friendArray[i];
+        for (let i = 0; i < friends.length; i++) {
+            let currentFriend = friends[i];
             totalDifference = 0;
 
-            for (let j = 0; j < friendArray.length; j++) {
+            console.log(currentFriend.name);
+
+            for (let j = 0; j < currentFriend.scores.length; j++) {
                 let currentFriendScore = currentFriend.scores[j];
                 let currentUserScore = userScores[j];
 
                 totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
             }
 
-            if (totalDifference <= bestFriend.friendDifference) {
-                bestFriend.name = currentFriend.name;
-                bestFriend.photo = currentFriend.photo;
-                bestFriend.friendDifference = totalDifference;
+            if (totalDifference <= bestMatch.friendDifference) {
+                bestMatch.name = currentFriend.name;
+                bestMatch.photo = currentFriend.photo;
+                bestMatch.friendDifference = totalDifference;
             }
         }
-        friendArray.push(userData);
+        friends.push(userData);
 
-        res.json(bestFriend);
+        res.json(bestMatch);
     });
 };
