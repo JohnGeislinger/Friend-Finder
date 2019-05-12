@@ -4,9 +4,13 @@ Find your bestfriend from the Planet C-137.  This application uses Express to ha
 
 ## Getting Started
 
-![Alt screenshot](./app/Llama_Drama.png?raw=true "C-137")
+Survey Screen:
+![Alt screenshot](./app/survey.png?raw=true "survey")
+Results Screen:
+![Alt screenshot](./app/results.png?raw=true "results")
 
 Follow the link below to the fully deployed application:
+https://damp-badlands-78003.herokuapp.com/
 
 ## To Download and Play Locally
 
@@ -35,7 +39,7 @@ After the program loads on localhost:3000 follow the prompts.
 
 ## Deployment
 
-* Deployed to [Heroku]().
+* Deployed to [Heroku](https://damp-badlands-78003.herokuapp.com/).
 * Repo on [GitHub](https://github.com/JohnGeislinger/Friend-Finder).
 
 ## License
